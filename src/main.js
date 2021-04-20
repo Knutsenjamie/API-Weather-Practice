@@ -21,10 +21,11 @@ $(document).ready(function() {
     request.open("GET", url, true);
     request.send();
 
-  function getElements(response) {
+    function getElements(response) {
       $('.showHumidity').html(`The humidity in ${city} is ${response.main.humidity}%`);
       $('.showTemp').html(`The temperature in Kelvins is ${response.main.temp} degrees.`);
       $('.showWind').html(`The wind speed is currently ${response.wind.speed}`);
+      $('.showConditions').html(`The current conditions of your city are ${response.weather[0].main}`);
     }
   });
 });
