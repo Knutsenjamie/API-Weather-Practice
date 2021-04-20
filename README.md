@@ -44,7 +44,6 @@ https://github.com/Knutsenjamie/API-Weather-Practice.git
   * Run the command 'npm install' to install dependencies
   * Optionally, run the command 'npm run build' to make a bundle of the files
   * Finally, run the command 'npm run start' to start a development server
-8. To run tests, navigate to 'Friday-Project-5/' in your terminal and run the command 'npm run test'
 
 ## Licensing
 
