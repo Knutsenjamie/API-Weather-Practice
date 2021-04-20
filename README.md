@@ -43,7 +43,7 @@ https://github.com/Knutsenjamie/API-Weather-Practice.git
 7. To start a development server and view the project in the browser:
   * Run the command 'npm install' to install dependencies
   * Optionally, run the command 'npm run build' to make a bundle of the files
-  * Finally, run the command 'npm run start' to start a development server
+  * Finally, run the command 'npm run start' to start a development server (Do not open a live server- otherwise the functionality will not work.)
 
 ## Licensing
 
