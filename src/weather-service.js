@@ -1,4 +1,4 @@
-export default class weatherService {
+export default class WeatherService {
   static getWeather(city) {
     return new Promise(function(resolve, reject) {
     let request = new XMLHttpRequest();
