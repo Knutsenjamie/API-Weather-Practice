@@ -13,20 +13,24 @@ function clearFields() {
   $('.showConditions').text("");
 }
 
+function getElements(response) {
+  if (response.main) {
+    $('.showHumidity').html(`The humidity in ${response.name} is ${response.main.humidity}%`);
+    $('.showTemp').html(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+    $('.showWind').html(`The wind speed is currently ${response.wind.speed}`);
+    $('.showConditions').html(`The current conditions of your city are ${response.weather[0].main}`);
+  } else {
+    $('.showErrors').html(`There was an error processing your request: ${response.message}`);
+  }
+}
+
 $(document).ready(function() {
   $('#weatherLocation').click(function() {
     let city = $('#location').val();
     clearFields();
-    let promise = WeatherService.getWeather(city);
-    promise.then(function(response) {
-    const body = JSON.parse(response);
-      $('.showHumidity').html(`The humidity in ${city} is ${body.main.humidity}%`);
-      $('.showTemp').html(`The temperature in Kelvins is ${body.main.temp} degrees.`);
-      $('.showWind').html(`The wind speed is currently ${body.wind.speed}`);
-      $('.showConditions').html(`The current conditions of your city are ${body.weather[0].main}`);
-      $('.showErrors').text("");
-    }, function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error}`);
+    WeatherService.getWeather(city)
+    .then(function(response) {
+      getElements(response);
     });
   });
 });
